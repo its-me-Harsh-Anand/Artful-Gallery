@@ -5,6 +5,7 @@ import Home from "./Home";
 import Layout from "./Layout";
 import Contact from "./Contact";
 import NotFound from "./NotFound";
+import Register from "./Register";
 
 function App (){
   return (
@@ -13,6 +14,7 @@ function App (){
 
         <Routes>
           <Route exact path='/' element={<Home />} />
+          <Route exact path='/register' element={<Register />} />
           <Route exact path='/contact' element={<Contact />} />
           <Route path ="*" element={<NotFound />} />
         </Routes>
