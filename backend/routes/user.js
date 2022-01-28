@@ -2,6 +2,19 @@ const router = require('express').Router()
 
 let User = require('../models/user.model')
 
+//Getting all posts
+router.route('/allposts').get((req, res)=>{
+    User.find()
+    .then(user =>{
+        let posts = []
+        user.forEach(entry =>{
+            posts.push(...entry.posts)
+        })
+        return posts
+    }).then(posts=> res.json(posts))
+    .catch(err => res.json({messsage: "Fetching all posts failed", stat: "false", error: err}))
+})
+
 //Getting user details by id
 router.route('/:id').get((req, res)=>{
     User.findById(req.params.id)
@@ -22,7 +35,18 @@ router.route('/:id').get((req, res)=>{
     .catch(err => res.json({message: "User not found", stat: false, error: err}))
 })
 
+// Finding user by username
 
+router.route('/username/:username').get((req, res)=>{
+    findUser(req.params.username, (err, user)=>{
+        if(user){
+            res.json(user)
+        }else{
+            res.json({message: "User not found",stat: false, error: err})
+        }
+    })
+
+})
 
 // Registering new user
 
@@ -63,11 +87,11 @@ router.route('/update/about/:id').post((req, res)=>{
 
         user.save()
         .then(()=> res.json({message : "About Section updated"}))
-        .catch((err)=> res.json({message : "Error while updating", error : err}))
+        .catch((err)=> res.json({message : "Error while updating", error : err, stat: true}))
     })
     .catch((err)=> {
         console.log(err)
-        res.json({message: "Error in finding user", error : err})
+        res.json({message: "Error in finding user while updating about section", stat : true, error : err})
     })
 })
 
@@ -84,7 +108,7 @@ router.route('/update/posts/:id').post((req, res)=>{
         .then(()=> res.json({message : "New post added"}))
         .catch((err)=> res.json({message : "Error while adding new post", error : err}))
     })
-    .catch((err)=> res.json({message: "Error in finding user", error : err}))
+    .catch((err)=> res.json({message: "Error in finding user while adding new post", stat : false, error : err}))
 })
 
 
@@ -101,5 +125,6 @@ function findUser(username, callback){
         }
     });
 }
+
 
 module.exports = router

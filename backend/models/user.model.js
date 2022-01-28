@@ -5,13 +5,16 @@ const Schema = mongoose.Schema
 const aboutSchema = new Schema(
     {
         fullname : {
-            type : String
+            type : String,
+            trim : true
         },
         email : {
-            type : String
+            type : String,
+            trim : true
         },
         contact : {
-            type : String
+            type : String,
+            trim : true
         }
     }
 )
@@ -21,11 +24,13 @@ const userSchema = new Schema(
         username : {
             type: String,
             unique: true,
-            required: true
+            required: true,
+            trim: true
         },
         password : {
             type: String,
-            required: true
+            required: true,
+            trim: true
         },
         about : {
             type: aboutSchema        
