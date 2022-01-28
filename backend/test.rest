@@ -1,0 +1,31 @@
+GET http://localhost:5000/
+
+###
+GET http://localhost:5000/user/61f3a7deef366bea94910a31
+
+###
+POST http://localhost:5000/user/register
+Content-Type: application/json
+
+{
+    "username" : "harshit01",
+    "password" : "harsh123"
+}
+
+###
+POST http://localhost:5000/user/update/about/61f3a7deef366bea94910a31
+Content-Type: application/json
+
+{
+    "fullname" : "Harsh",
+    "email" : "harshvivek.787@gmail.com",
+    "contact" : "7488407549"
+}
+
+###
+POST http://localhost:5000/user/update/posts/61f3a7deef366bea94910a31
+Content-Type: application/json
+
+{
+    "post" : "www.yahoo.com"   
+}
