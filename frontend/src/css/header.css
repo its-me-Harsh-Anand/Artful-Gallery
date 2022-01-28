@@ -1,0 +1,62 @@
+.header_main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 5px;
+    background-color: white;
+    max-width: 768px;
+    margin: auto;
+    position: sticky;
+}
+.header_input{
+    height: 2em;
+    min-width: 300px;
+    background-color: #efefef;
+    padding: 8px 5px;
+    padding-left: 10px;
+    font-size: large;
+    border: none;
+    border-radius: 10px;
+    height: 1.2%;
+}
+
+.header_icons{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 150px;
+}
+.header_logo{
+    transform: scale(2);
+    color: rgb(253, 148, 166);
+}
+.header_logo:focus, .header_logo:hover{
+    color: white;
+    background-color: pink;
+}
+.header_mobile{
+    display: flex;
+    justify-content: center;
+}
+@media(max-width : 500px){
+    .header_input{
+        display: none;
+    }
+    .header_main{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        justify-content: center;
+    }
+    .header_icons{
+        width: 100%;
+    }
+    .header_main .laptop_logo > img{
+        display: none;
+    }
+}
+@media (min-width : 501px) {
+    .header_mobile{
+        display: none;
+    }
+}

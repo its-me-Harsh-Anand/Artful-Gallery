@@ -6,8 +6,10 @@ import Layout from "./Layout";
 import Contact from "./Contact";
 import NotFound from "./NotFound";
 import Register from "./Register";
+// import isLoggedIn from "../utils/login";
 
 function App (){
+  //console.log(isLoggedIn()) //use this function anywhere to see if user is logged in or not
   return (
     <Router>
       <Layout>

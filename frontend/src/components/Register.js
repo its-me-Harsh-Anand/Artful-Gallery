@@ -14,10 +14,10 @@ function Register() {
 
       
       //For login page to check whether user already logged in or not, don't use it here 
-      const recipeJSONfromLS = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
-      if(recipeJSONfromLS.username === newuser.username && recipeJSONfromLS.password === newuser.password){
-        console.log(recipeJSONfromLS, "Already exists")
-      }
+      // const recipeJSONfromLS = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
+      // if(recipeJSONfromLS.username === newuser.username && recipeJSONfromLS.password === newuser.password){
+      //   console.log(recipeJSONfromLS, "Already exists")
+      // }
       
 
       await setUser(newuser)

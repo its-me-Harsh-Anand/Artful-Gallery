@@ -1,0 +1,8 @@
+.layout_main{
+    max-width: 768px;
+    margin: auto;
+}
+.header_parent{
+    width: 100%;
+    background-color: white;
+}

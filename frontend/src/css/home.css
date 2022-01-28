@@ -1,0 +1,7 @@
+.home_main{
+    display: flex;
+    justify-content: center;
+}
+.posts_main{
+    max-width: 500px;
+}
