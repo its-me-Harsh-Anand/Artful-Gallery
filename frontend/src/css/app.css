@@ -5,6 +5,7 @@
 @import './register.css';
 @import './header.css';
 @import './home.css';
+@import './card.css';
 
 *, *::before, *::after{
     font-family: Gotham Rounded, sans-serif;

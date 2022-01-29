@@ -38,3 +38,6 @@
 .register_form-input:hover{
     outline: 2px solid pink;
 }
+.login_para{
+    align-self: center;
+}

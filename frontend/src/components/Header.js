@@ -4,8 +4,15 @@ import {MdAddCircleOutline} from 'react-icons/md'
 import {CgProfile} from 'react-icons/cg'
 import { Link } from 'react-router-dom'
 import {IconContext} from 'react-icons'
+import Card from './Card';
+import { useState } from 'react'
+import SearchBar from './SearchBar';
 
 function Header() {
+  const [hidden, setHidden] = useState(true)
+  function handleshowCard(){
+    setHidden(!hidden)
+  }
   return (
     <>
     <div className="header_mobile">
@@ -20,14 +27,16 @@ function Header() {
         <img src="/assets/logo.PNG" alt="Artful logo" />
       </Link>
 
-      <input type="search" className="header_input" placeholder="Search..."/>
-
+      {/* <input type="search" className="header_input" placeholder="Search..."/> */}
+      <SearchBar />
       <div className="header_icons">
           <Link to="/"><FaHome className="header_logo header_logo-home"/></Link>
           <Link to="/post"><MdAddCircleOutline className="header_logo header_logo-add"/></Link>
-          <Link to="/profile"><CgProfile className="header_logo header_logo-profile"/></Link>
+          <CgProfile className="header_logo header_logo-profile" onClick={()=>handleshowCard()}/>
       </div>
     </div>
+
+    <Card hidden ={hidden}/>
     </>
   )
 }

@@ -7,6 +7,8 @@ import Contact from "./Contact";
 import NotFound from "./NotFound";
 import Register from "./Register";
 import Header from "./Header";
+import Login from "./Login";
+import Profile from "./Profile";
 // import isLoggedIn from "../utils/login";
 
 function App (){
@@ -19,7 +21,8 @@ function App (){
         <Routes>
           <Route exact path='/' element={<Home />} />
           <Route exact path='/register' element={<Register />} />
-          <Route exact path='/contact' element={<Contact />} />
+          <Route exact path='/login' element={<Login />} />
+          <Route exact path='/profile/:username' element={<Profile />} />
           <Route path ="*" element={<NotFound />} />
         </Routes>
 

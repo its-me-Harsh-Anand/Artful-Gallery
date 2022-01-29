@@ -53,7 +53,7 @@ function Register() {
         if(localStorage.getItem(LOCAL_STORAGE_KEY)){
           localStorage.clear()
         }
-        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify({id: res.data.id, loggedin : true}))
+        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify({id: res.data.id, username: res.data.username,loggedin : true}))
 
         navigate('/')
       }else{

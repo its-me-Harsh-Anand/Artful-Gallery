@@ -8,7 +8,8 @@ function Home() {
   
   useEffect(()=>{
     const login = isLoggedIn()
-    if(!login) navigate('/register')
+    console.log("isLoggedIn from home",login)
+    // if(!login) navigate('/login')
   }, [])
 
   return (

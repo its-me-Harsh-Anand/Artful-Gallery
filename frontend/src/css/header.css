@@ -8,6 +8,9 @@
     margin: auto;
     position: sticky;
 }
+.header_logo-profile{
+    position: relative;
+}
 .header_input{
     height: 2em;
     min-width: 300px;
