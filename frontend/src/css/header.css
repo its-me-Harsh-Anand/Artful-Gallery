@@ -4,7 +4,7 @@
     align-items: center;
     padding: 8px 5px;
     background-color: white;
-    max-width: 768px;
+    /* max-width: 768px; */
     margin: auto;
     position: sticky;
 }

@@ -1,7 +1,7 @@
-import Header from "./Header"
 import { Helmet } from "react-helmet"
 
 function Layout({title, keywords, description, children}) {
+
     return (
         <>
             <Helmet>
@@ -10,9 +10,7 @@ function Layout({title, keywords, description, children}) {
                 <meta name = 'keywords' content = {keywords} />
             </Helmet>
 
-                <div className="header_parent">
-                    <Header />
-                </div>
+                 
                 <div className="layout_main">
                     {children}
                 </div>

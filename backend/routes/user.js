@@ -40,7 +40,7 @@ router.route('/:id').get((req, res)=>{
 router.route('/username/:username').get((req, res)=>{
     findUser(req.params.username, (err, user)=>{
         if(user){
-            res.json(user)
+            res.json({messsage: "User found", stat: true, user: user})
         }else{
             res.json({message: "User not found",stat: false, error: err})
         }

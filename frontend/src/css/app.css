@@ -1,5 +1,6 @@
 @import-normalize;
 @import './font.css';
+@import './button.css';
 @import './layout.css';
 @import './register.css';
 @import './header.css';

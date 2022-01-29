@@ -7,7 +7,7 @@ GET http://localhost:5000/user/allposts
 GET http://localhost:5000/user/61f3a7deef366bea94910a31
 
 ###
-GET http://localhost:5000/user/username/harshit01
+GET http://localhost:5000/user/username/harshit05
 
 ###
 POST http://localhost:5000/user/register

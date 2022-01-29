@@ -1,0 +1,40 @@
+.register_div{
+    max-width: 768px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+.register_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 400px;
+    border-radius: 10px;    
+    box-shadow: 5px 5px 10px rgba(62, 121, 251, 0.5);
+    background-color: rgba(62, 121, 251, 0.8);
+    padding: 10px;
+}
+.register_form > h3 {
+    align-self: center;
+    color: pink;
+    letter-spacing: 4px;
+    word-spacing: 8px;
+    font-size: large;
+}
+.register_form-label{
+    font-weight: bold;
+    padding: 5px;
+    margin-top: 10px;
+}
+.register_form-input{
+    width: 300px;
+    padding: 5px;
+    margin-top: 5px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+.register_form-input:hover{
+    outline: 2px solid pink;
+}
