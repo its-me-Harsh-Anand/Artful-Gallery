@@ -25,7 +25,8 @@ router.route('/:id').get((req, res)=>{
             about : {
                 fullname : user.about.fullname,
                 email : user.about.email,
-                number : user.about.contact
+                number : user.about.contact,
+                description : user.about.description
             },
             posts : user.posts
         }
@@ -56,7 +57,8 @@ router.route('/register').post((req, res)=>{
     const about = {
         fullname: "",
         email: "",
-        contact: ""
+        contact: "",
+        description: ""
     }
     
         const newUser = new User(
@@ -83,7 +85,8 @@ router.route('/update/about/:id').post((req, res)=>{
     .then(user => {
         user.about.fullname = req.body.fullname,
         user.about.email = req.body.email,
-        user.about.contact = req.body.contact
+        user.about.contact = req.body.contact,
+        user.about.description = req.body.description
 
         user.save()
         .then(()=> res.json({message : "About Section updated"}))

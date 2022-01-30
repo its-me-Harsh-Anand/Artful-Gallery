@@ -6,6 +6,8 @@
 @import './header.css';
 @import './home.css';
 @import './card.css';
+@import 'profile.css';
+@import 'postshow.css';
 
 *, *::before, *::after{
     font-family: Gotham Rounded, sans-serif;

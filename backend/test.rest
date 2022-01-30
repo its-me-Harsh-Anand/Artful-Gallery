@@ -4,7 +4,7 @@ GET http://localhost:5000/
 GET http://localhost:5000/user/allposts
 ###
 
-GET http://localhost:5000/user/61f3a7deef366bea94910a31
+GET http://localhost:5000/user/61f6bbb060fec7214abab77a
 
 ###
 GET http://localhost:5000/user/username/harshit01
@@ -14,18 +14,19 @@ POST http://localhost:5000/user/register
 Content-Type: application/json
 
 {
-    "username" : "harshit02",
+    "username" : "testuser01",
     "password" : "harsh123"
 }
 
 ###
-POST http://localhost:5000/user/update/about/61f402f245974d6d02cdafec
+POST http://localhost:5000/user/update/about/61f6bbb060fec7214abab77a
 Content-Type: application/json
 
 {
     "fullname" : "Harsh Anand",
     "email" : "harshanand.1379@gmail.com",
-    "contact" : "7562820769"
+    "contact" : "7562820769",
+    "description": "I'm a good boy and i love to play too much."
 }
 
 ###

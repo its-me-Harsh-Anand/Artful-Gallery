@@ -1,6 +1,8 @@
 import React from 'react';
 
-function Post() {
+function PostEdit() {
+
+  // if not logged in navigete('/login')
   return (
       <div>
           I'm post buddy
@@ -8,4 +10,4 @@ function Post() {
   )
 }
 
-export default Post;
+export default PostEdit;

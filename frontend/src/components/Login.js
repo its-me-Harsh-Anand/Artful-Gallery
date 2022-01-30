@@ -34,7 +34,7 @@ function Login() {
       }else{
         alert("Incorrect username or password")
       }
-    })
+    }).catch(err=> alert("Oops! Error occured while signing you in"))
       
   }
 
