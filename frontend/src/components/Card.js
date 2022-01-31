@@ -29,8 +29,13 @@ function Card(props) {
   return (
       <div className="header_card" style={{display: hidden?'none':'flex'}}>
           <ul>
+          {/* <input 
+                                    type="search" 
+                                    className="card_input" 
+                                    placeholder="Search..."
+                                   /> */}
               {
-                  isLoggedIn() && <input type="search" className="card_input" placeholder="Search..."/>
+                  isLoggedIn() && <SearchBar mobile={true} />
               }   
               <hr/>
               {

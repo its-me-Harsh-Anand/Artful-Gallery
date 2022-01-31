@@ -27,8 +27,7 @@ function Header() {
         <img src="/assets/logo.PNG" alt="Artful logo" />
       </Link>
 
-      {/* <input type="search" className="header_input" placeholder="Search..."/> */}
-      <SearchBar />
+      <SearchBar mobile={false}/>
       <div className="header_icons">
           <Link to="/"><FaHome className="header_logo header_logo-home"/></Link>
           <Link to="/post"><MdAddCircleOutline className="header_logo header_logo-add"/></Link>

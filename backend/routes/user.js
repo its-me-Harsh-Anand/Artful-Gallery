@@ -3,6 +3,21 @@ const router = require('express').Router()
 let User = require('../models/user.model')
 
 //Getting all posts
+router.route('/allusers').get((req, res)=>{
+    User.find()
+    .then(user =>{
+        let posts = []
+        user.forEach(entry =>{
+            const userdetails = {
+                username : entry.username,
+                fullname : entry.about.fullname
+            }
+            posts.push(userdetails)
+        })
+        return posts
+    }).then(posts=> res.json(posts))
+    .catch(err => res.json({messsage: "Fetching all users failed", stat: "false", error: err}))
+})
 router.route('/allposts').get((req, res)=>{
     User.find()
     .then(user =>{
