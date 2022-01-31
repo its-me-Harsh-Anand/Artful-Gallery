@@ -1,20 +1,38 @@
+import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
 import Layout from './Layout.js'
 import PostShow from './PostShow.js';
+import NotFound from './NotFound'
+
 function Profile() {
   const { username } = useParams()
   const [user, setUser] =  useState({})
+  const [userbackend, setUserbackend] = useState({})
+
+  useEffect(()=>{
+    const getUserDetails = async () =>{
+      try {
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/user/username/${username}`)
+        const data = response.data;
+        setUserbackend(data)
+      } catch (error){
+        console.log(error)
+      }
+    }
+    getUserDetails()
+  }, [username])
 
   useEffect(()=>{
     const userfromLS = JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCAL_STORAGE_KEY))
-    console.log(userfromLS)
     setUser(userfromLS)
   }, [])
 
+  console.log(userbackend)
   return (
       <Layout title={user.username}>
-        <div className="profile_main-div">
+        { userbackend.stat &&
+          <div className="profile_main-div">
           <div className="profile">
             <img src="/assets/dummyUser.jpg" alt="my image"/>
             <div className="about">
@@ -54,6 +72,10 @@ function Profile() {
             </div>
             
         </div>
+        }
+        {
+          userbackend.stat || <NotFound />
+        }
       </Layout>
   )
 }
