@@ -30,7 +30,7 @@ function Login() {
       if((data.user?.username === username.trim()) && (data.user?.password === password.trim())){
         localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify({id: data.user._id, username: data.user.username, loggedin : true}))
         alert("Logged in Successfully")
-        navigate('/')
+        navigate(`/profile/${data.user?.username}`)
       }else{
         alert("Incorrect username or password")
       }

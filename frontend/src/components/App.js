@@ -9,6 +9,7 @@ import Register from "./Register";
 import Header from "./Header";
 import Login from "./Login";
 import Profile from "./Profile";
+import ProfileEdit from "./ProfileEdit";
 // import isLoggedIn from "../utils/login";
 
 function App (){
@@ -23,6 +24,7 @@ function App (){
           <Route exact path='/register' element={<Register />} />
           <Route exact path='/login' element={<Login />} />
           <Route exact path='/profile/:username' element={<Profile />} />
+          <Route exact path='/profile/:id/edit' element={<ProfileEdit />} />
           <Route path ="*" element={<NotFound />} />
         </Routes>
 

@@ -30,9 +30,9 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:5000/user/update/posts/61f3a7deef366bea94910a31
+POST http://localhost:5000/user/update/posts/61f6bbb060fec7214abab77a
 Content-Type: application/json
 
 {
-    "post" : "new@gmail.com"   
+    "post" : "https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max"   
 }

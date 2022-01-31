@@ -5,10 +5,12 @@ import Layout from './Layout.js'
 import PostShow from './PostShow.js';
 import NotFound from './NotFound'
 
+
 function Profile() {
   const { username } = useParams()
   const [user, setUser] =  useState({})
   const [userbackend, setUserbackend] = useState({})
+
 
   useEffect(()=>{
     const getUserDetails = async () =>{
@@ -30,31 +32,39 @@ function Profile() {
 
   console.log(userbackend)
   return (
-      <Layout title={user.username}>
-        { userbackend.stat &&
+      <Layout title="Artful Profile">
+        { userbackend && userbackend.stat &&
           <div className="profile_main-div">
           <div className="profile">
             <img src="/assets/dummyUser.jpg" alt="my image"/>
             <div className="about">
               <div className="about_profile-details">
                 <div className="profile-username">
-                  <h3>{dummy.username}</h3>
+                  <h3>{userbackend.user.username}</h3>
                   <h4>Username</h4>
                 </div>
                 
                 <div className="profile-username">
-                  <h3>{dummy.name}</h3>
+                  <h3>{userbackend.user.about.fullname}</h3>
                   <h4>Name</h4>
                 </div>
               </div>
 
-              <div className="profile-description">{dummy.description}</div>
+              <div className="profile-description">{userbackend.user.about.description}</div>
               <div className="profile-buttons">
               {
                 user.username === username &&
-                <button className="btn btn--primary">Edit Profile</button>
+                <button className="btn btn--primary">
+                  <a href={`/profile/${user.id}/edit`}>
+                    Edit Profile
+                  </a>
+                </button>
               }
-              <button className="btn btn--primary">Contact me</button>
+              <button className="btn btn--primary">
+                <a href={`mailto:${userbackend.user.about.email}`}>
+                  Contact me
+                </a>
+              </button>
               </div>
               
             </div>
@@ -65,9 +75,20 @@ function Profile() {
               <h3>My Posts</h3>
             <div className="profile_post-images">
             {
-              dummy.posts.map((post, index) =>{
+              userbackend.user.posts.map((post, index) =>{
                 return <PostShow key={index} postlink = {post} />
               })
+            }
+            {
+              userbackend.user.posts.length === 0 && 
+              <div>
+                {
+                  user.username !== username && <h3>Oops! No Posts Found.</h3>
+                }
+                {
+                  user.username === username && <h3>Add some posts to showcase to the world</h3>
+                }       
+              </div>
             }
             </div>
             

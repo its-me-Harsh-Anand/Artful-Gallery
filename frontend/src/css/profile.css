@@ -23,6 +23,7 @@
     display: flex;
     justify-content: space-around;
     padding: 2rem 1rem;
+    min-width: 330px;
 }
 .profile-username{
     display: flex;
@@ -44,17 +45,25 @@
     padding: 0 2rem;
     text-align: justify;
     max-width: 400px;
+    white-space: pre-wrap;
 }
 .profile-buttons{
     display: flex;
     justify-content: space-around;
 }
+.profile-buttons button > a{
+    text-decoration: none;
+    color: inherit;
+}
 .profile_post-images{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* display: grid;
+    justify-items: center; */
     gap: 15px;
     max-width: 768px;
-    justify-items: center;
 }
 @media (max-width: 500px) {
     .profile{
