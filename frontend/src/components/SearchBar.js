@@ -28,9 +28,6 @@ function SearchBar(props) {
   }, [searched, alluser])
 
 
-  console.log("All users : ", alluser)
-  console.log("Search results : ", searchedResults)
-
 
   return (
     <div className="search_main-box">

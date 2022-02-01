@@ -7,6 +7,7 @@ import {IconContext} from 'react-icons'
 import Card from './Card';
 import { useState } from 'react'
 import SearchBar from './SearchBar';
+import UploadImage from './UploadImage';
 
 function Header() {
   const [hidden, setHidden] = useState(true)
@@ -30,7 +31,7 @@ function Header() {
       <SearchBar mobile={false}/>
       <div className="header_icons">
           <Link to="/"><FaHome className="header_logo header_logo-home"/></Link>
-          <Link to="/post"><MdAddCircleOutline className="header_logo header_logo-add"/></Link>
+          <UploadImage />
           <CgProfile className="header_logo header_logo-profile" onClick={()=>handleshowCard()}/>
       </div>
     </div>

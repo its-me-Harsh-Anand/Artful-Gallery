@@ -8,6 +8,7 @@
 @import './card.css';
 @import 'profile.css';
 @import 'postshow.css';
+@import 'uploadImage.css';
 
 *, *::before, *::after{
     font-family: Gotham Rounded, sans-serif;

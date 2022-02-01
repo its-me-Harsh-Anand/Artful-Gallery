@@ -1,0 +1,25 @@
+.input-wrapper {
+  height: 30px;
+  width: 30px;
+  overflow: hidden;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  border: 2px solid pink;
+  font-weight: bold;
+  font-size: 24px;
+}
+.input-wrapper > input {
+    height: 30px;
+    width: 30px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    background-color: white;
+    background-color: pink;
+  border-radius: 50%;
+  z-index: 100;
+  position: relative;
+  opacity: 0;
+}
+

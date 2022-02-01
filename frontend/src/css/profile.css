@@ -1,6 +1,7 @@
 .profile_main-div{
     max-width: 768px;
     margin-top: 20px;
+    margin-bottom: 100px;
     display: flex;
     justify-content: center;
     flex-direction: column;

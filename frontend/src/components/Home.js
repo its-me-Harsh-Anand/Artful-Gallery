@@ -3,6 +3,8 @@ import isLoggedIn from '../utils/login';
 import PostAll from './PostAll';
 import Layout from './Layout'
 import {useNavigate} from "react-router-dom"
+import { imageStorage } from '../firebase/config.js'
+
 function Home() {
   const navigate = useNavigate()
   
@@ -10,6 +12,7 @@ function Home() {
     if(!isLoggedIn()) navigate('/login')
   }, [])
 
+  console.log(imageStorage)
   return (
     <Layout>
       <div className="home_main">
