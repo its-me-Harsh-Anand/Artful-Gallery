@@ -39,7 +39,10 @@ const userSchema = new Schema(
         about : {
             type: aboutSchema        
         },
-        posts : [String]
+        posts : [String],
+        photo: {
+            type : String
+        }
     },
     {
         timestamps: true

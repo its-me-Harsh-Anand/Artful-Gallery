@@ -58,13 +58,13 @@
 }
 .profile_post-images{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    /* display: grid;
-    justify-items: center; */
+    
     gap: 15px;
     max-width: 768px;
+    width: 100%;
 }
 @media (max-width: 500px) {
     .profile{

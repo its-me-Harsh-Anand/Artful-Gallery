@@ -7,7 +7,7 @@ GET http://localhost:5000/user/allusers
 GET http://localhost:5000/user/allposts
 ###
 
-GET http://localhost:5000/user/61f6bbb060fec7214abab77a
+GET http://localhost:5000/user/61f960bed900fe7a05822252
 
 ###
 GET http://localhost:5000/user/username/testuser01
@@ -17,12 +17,12 @@ POST http://localhost:5000/user/register
 Content-Type: application/json
 
 {
-    "username" : "testuser01",
+    "username" : "testuser02",
     "password" : "harsh123"
 }
 
 ###
-POST http://localhost:5000/user/update/about/61f6bbb060fec7214abab77a
+POST http://localhost:5000/user/update/about/61f960bed900fe7a05822252
 Content-Type: application/json
 
 {
@@ -33,9 +33,17 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:5000/user/update/posts/61f6bbb060fec7214abab77a
+POST http://localhost:5000/user/update/posts/61f960bed900fe7a05822252
 Content-Type: application/json
 
 {
     "post" : "https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max"   
+}
+
+###
+POST http://localhost:5000/user/update/photo/61f960bed900fe7a05822252
+Content-Type: application/json
+
+{
+    "photo" : "https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max"
 }

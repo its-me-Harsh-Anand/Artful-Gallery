@@ -6,5 +6,6 @@
 @media (max-width: 600px) {
     .postshow{
         height: 100px;
+        width: 100px;
     }   
 }

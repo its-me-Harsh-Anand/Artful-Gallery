@@ -43,7 +43,8 @@ router.route('/:id').get((req, res)=>{
                 number : user.about.contact,
                 description : user.about.description
             },
-            posts : user.posts
+            posts : user.posts,
+            photo : user.photo
         }
         return returnUser
     })
@@ -75,12 +76,13 @@ router.route('/register').post((req, res)=>{
         contact: "",
         description: ""
     }
-    
+    const photo = ""
         const newUser = new User(
             {
                 username,
                 password,
-                about
+                about,
+                photo
             }
             )
 
@@ -110,6 +112,25 @@ router.route('/update/about/:id').post((req, res)=>{
     .catch((err)=> {
         console.log(err)
         res.json({message: "Error in finding user while updating about section", stat : true, error : err})
+    })
+})
+
+
+//Updating display picture of user
+
+router.route('/update/photo/:id').post((req, res)=>{
+
+    User.findByIdAndUpdate(req.params.id)
+    .then(user => {
+        user.photo = req.body.photo
+
+        user.save()
+        .then(()=> res.json({message : "Display Picture Updated"}))
+        .catch((err)=> res.json({message : "Error while uploading display image", error : err, stat: false}))
+    })
+    .catch((err)=> {
+        console.log(err)
+        res.json({message: "Error in finding user while uploading image", stat : true, error : err})
     })
 })
 
