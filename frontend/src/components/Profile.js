@@ -36,7 +36,7 @@ function Profile() {
         { userbackend && userbackend.stat &&
           <div className="profile_main-div">
           <div className="profile">
-            <img src="/assets/dummyUser.jpg" alt="my image"/>
+            <img src="/assets/dummyUser.png" alt="my image"/>
             <div className="about">
               <div className="about_profile-details">
                 <div className="profile-username">

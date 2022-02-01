@@ -1,5 +1,6 @@
 .postshow{
     height: 200px;
+    width: 200px;
     border-radius: 2px;
 }
 @media (max-width: 600px) {

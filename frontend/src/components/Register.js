@@ -55,7 +55,7 @@ function Register() {
         }
         localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify({id: res.data.id, username: res.data.username,loggedin : true}))
 
-        navigate('/')
+        navigate(`/profile/${JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)).id}/edit`)
       }else{
         alert(res.data.message)
         navigate('/register')

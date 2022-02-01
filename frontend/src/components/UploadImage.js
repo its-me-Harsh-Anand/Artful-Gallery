@@ -22,7 +22,12 @@ function UploadImage() {
 
   return (
       <form>
-          <div className="input-wrapper">
+          <div 
+            className="input-wrapper"
+            style={{
+                backgroundImage: `url('/assets/add.svg')`
+            }}
+          >
             <input 
                 type="file" 
                 name="inputfile"

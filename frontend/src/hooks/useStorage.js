@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState, useEffect } from "react";
 import { imageStorage, ref, uploadBytesResumable, getDownloadURL } from "../firebase/config";
 
@@ -20,6 +21,13 @@ const useStorage = (file) => {
         }, async ()=>{
             await getDownloadURL(uploadImage.snapshot.ref).then((downloadURL) => {
                 setUrl(downloadURL)
+                const post = {
+                    post: downloadURL
+                }
+                axios.post(`${process.env.REACT_APP_BACKEND_URL}/user/update/posts/${JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCAL_STORAGE_KEY)).id}`, post)
+                .then(res => alert(res.data.message))
+                .catch(err=> console.log(err))
+                console.log(post, JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCAL_STORAGE_KEY)).id)
             })
         })
     }, [file])

@@ -1,25 +1,21 @@
-import React from 'react';
-import useStorage from '../hooks/useStorage';
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+import useStorage from "../hooks/useStorage";
 
 function ProgressBar(props) {
-    const { file, setFile } = props
-    const { url, progress } = useStorage(file)
+  const { file, setFile } = props;
+  const { url, progress } = useStorage(file);
+  const [id, setId] = useState("")
+  const LOCAL_STORAGE_KEY = process.env.LOCAL_STORAGE_KEY
+  
 
+  useEffect(() => {
+    if (url) {
+      setFile(null);
+    }
+  }, [url, setFile]);
 
-    console.log(progress, url)
-  return (
-    <div
-        style={{
-            position: 'absolute',
-            top: '10px',
-            left: '0px',
-            width: progress + '%',
-            backgroundColor: 'pink',
-            height: '3px',
-            margin: '0px 10px'
-        }}
-    ></div>
-  )
+  return <div className="progress_bar" style={{ width: progress + "%" }}></div>;
 }
 
 export default ProgressBar;
