@@ -12,13 +12,10 @@ function Home() {
     if(!isLoggedIn()) navigate('/login')
   }, [])
 
-  console.log(imageStorage)
   return (
     <Layout>
       <div className="home_main">
           <div className="posts_main">
-            <PostAll />
-            <PostAll />
             <PostAll />
           </div>
         </div>

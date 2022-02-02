@@ -101,6 +101,8 @@ function ProfileEdit() {
             onChange={(e) => setDescription(e.target.value)}
           />
           
+
+
           <button
             type="submit"
             className="btn btn--primary"
@@ -108,6 +110,7 @@ function ProfileEdit() {
           >
             Submit
           </button>
+          <p>Want to edit profile photo? <a href={`/profile/photo/${id}/edit`}>click here</a></p>
         </form>
       </div>
     </Layout>

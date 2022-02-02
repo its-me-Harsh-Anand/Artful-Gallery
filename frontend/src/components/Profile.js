@@ -29,15 +29,19 @@ function Profile() {
     const userfromLS = JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCAL_STORAGE_KEY))
     setUser(userfromLS)
   }, [])
-
-  console.log(userbackend)
+  
   return (
       <Layout title="Artful Profile">
         { userbackend && userbackend.stat &&
           <div className="profile_main-div">
           <div className="profile">
-            <img src="/assets/dummyUser.png" alt="my image"/>
-            <div className="about">
+            <img 
+              // src="/assets/dummyUser.png" 
+              src={`${userbackend.user.photo.length > 0 ? userbackend.user.photo:"/assets/dummyUser.png"}`}
+              alt="my image"
+            />
+            
+              <div className="about">
               <div className="about_profile-details">
                 <div className="profile-username">
                   <h3>{userbackend.user.username}</h3>

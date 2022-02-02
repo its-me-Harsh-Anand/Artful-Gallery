@@ -19,7 +19,6 @@ function Card(props) {
             navigate('/login')
         }
     }, [])
-    console.log("idLoggedIn",isLoggedIn())
 
     function handleLogout(){
         localStorage.clear()
@@ -39,7 +38,12 @@ function Card(props) {
               }   
               <hr/>
               {
-                  isLoggedIn() && <li><CgProfile  className="header_card-icon"/> <a href={`/profile/${username}`} >Profile</a></li>
+                  isLoggedIn() && <li>
+                                    <CgProfile  className="header_card-icon"/> 
+                                    <a href={`/profile/${JSON.parse(localStorage.getItem(process.env.REACT_APP_LOCAL_STORAGE_KEY)).username}`} >
+                                        Profile
+                                    </a>
+                                </li>
               }    
               {
                   isLoggedIn() && <li onClick={()=> handleLogout()}><MdLogout className="header_card-icon" /> Logout</li>

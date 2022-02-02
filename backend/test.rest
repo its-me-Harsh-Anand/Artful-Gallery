@@ -7,17 +7,17 @@ GET http://localhost:5000/user/allusers
 GET http://localhost:5000/user/allposts
 ###
 
-GET http://localhost:5000/user/61f960bed900fe7a05822252
+GET http://localhost:5000/user/61fa3e25f780aadeb46eb4ad
 
 ###
-GET http://localhost:5000/user/username/testuser01
+GET http://localhost:5000/user/username/harshit01
 
 ###
 POST http://localhost:5000/user/register
 Content-Type: application/json
 
 {
-    "username" : "testuser02",
+    "username" : "testuser03",
     "password" : "harsh123"
 }
 
@@ -41,7 +41,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:5000/user/update/photo/61f960bed900fe7a05822252
+POST http://localhost:5000/user/update/photo/61f9540b445174c198ace29e
 Content-Type: application/json
 
 {

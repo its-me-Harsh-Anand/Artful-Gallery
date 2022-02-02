@@ -6,7 +6,9 @@
   height: 3px;
   border-radius: 5px;
 }
-
+.file_name{
+  transform: translateX(-30%);
+}
 .input-wrapper {
   height: 30px;
   width: 30px;

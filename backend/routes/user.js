@@ -87,7 +87,7 @@ router.route('/register').post((req, res)=>{
             )
 
             newUser.save()
-            .then((user)=> res.json({message: "Thanks for registering with us", stat: true, id:user._id}))
+            .then((user)=> res.json({message: "Thanks for registering with us", stat: true, id:user._id, username: user.username}))
         .catch(err => res.status(400).json({message: "User Already Exists", stat: false}))
     
     

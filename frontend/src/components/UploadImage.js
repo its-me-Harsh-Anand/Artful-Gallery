@@ -1,7 +1,5 @@
 import ProgressBar from './ProgressBar';
 import React, { useState } from 'react';
-import {MdAddCircleOutline} from 'react-icons/md'
-
 
 function UploadImage() {
     const [file, setFile] = useState(null)

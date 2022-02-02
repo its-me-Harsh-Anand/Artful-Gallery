@@ -3,17 +3,15 @@ import "../css/app.css"
 import {BrowserRouter as Router,Routes, Route} from 'react-router-dom'
 import Home from "./Home";
 import Layout from "./Layout";
-import Contact from "./Contact";
 import NotFound from "./NotFound";
 import Register from "./Register";
 import Header from "./Header";
 import Login from "./Login";
 import Profile from "./Profile";
 import ProfileEdit from "./ProfileEdit";
-// import isLoggedIn from "../utils/login";
+import ProfilePhotoEdit from "./ProfilePhotoEdit";
 
 function App (){
-  //console.log(isLoggedIn()) //use this function anywhere to see if user is logged in or not
   return (
     <Router>
       <Header />
@@ -25,6 +23,7 @@ function App (){
           <Route exact path='/login' element={<Login />} />
           <Route exact path='/profile/:username' element={<Profile />} />
           <Route exact path='/profile/:id/edit' element={<ProfileEdit />} />
+          <Route exact path='/profile/photo/:id/edit' element={<ProfilePhotoEdit />} />
           <Route path ="*" element={<NotFound />} />
         </Routes>
 

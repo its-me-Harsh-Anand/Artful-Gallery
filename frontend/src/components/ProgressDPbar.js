@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import useStorage from "../hooks/useStorage";
+import useDpStorage from "../hooks/useDpStorage";
 
-function ProgressBar(props) {
+function ProgressDpBar(props) {
   const { file, setFile } = props;
-  const { url, progress } = useStorage(file);
+  const { url, progress } = useDpStorage(file);
   
 
   useEffect(() => {
@@ -15,4 +15,4 @@ function ProgressBar(props) {
   return <div className="progress_bar" style={{ width: progress + "%" }}></div>;
 }
 
-export default ProgressBar;
+export default ProgressDpBar;
